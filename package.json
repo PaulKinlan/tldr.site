@@ -1,0 +1,43 @@
+{
+  "name": "tldr.site",
+  "version": "1.0.0",
+  "description": "A site that will TL;DR search results",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "serve": "npx serve dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PaulKinlan/tldr.site.git"
+  },
+  "author": "Paul Kinlan",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/PaulKinlan/tldr.site/issues"
+  },
+  "homepage": "https://github.com/PaulKinlan/tldr.site#readme",
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "@preact/preset-vite": "^2.5.0",
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "esbuild": "^0.19.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@google-labs/breadboard": "*",
+    "@google-labs/graph-runner": "*",
+    "@google-labs/llm-starter": "*",
+    "@preact/signals": "^1.2.0",
+    "preact": "^10.16.0",
+    "preact-router": "^4.1.2",
+    "vercel": "^31.2.3",
+    "vite": "^4.4.9"
+  }
+}
