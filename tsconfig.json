@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./public",
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "composite": false,
