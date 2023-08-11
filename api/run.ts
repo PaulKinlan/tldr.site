@@ -8,11 +8,6 @@ import fs from "fs";
 export default async (req: VercelRequest, res: VercelResponse) => {
   const { q } = req.query;
 
-
-  fs.readdirSync(process.cwd()).forEach(file => {
-    console.log(file);
-  });
-
   const currentBoard = await Board.load(path.join(process.cwd(), "graphs", "search-summary.json"));
   const outputs = [];
 
