@@ -5,7 +5,7 @@ class CustomEvent extends Event {
   }
 }
 
-globalThis.CustomEvent = CustomEvent;
+global.CustomEvent = CustomEvent;
 
 import { Board } from "@google-labs/breadboard";
 import { OutputValues, InputValues } from "@google-labs/graph-runner";
