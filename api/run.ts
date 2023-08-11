@@ -1,10 +1,8 @@
 import { Board } from "@google-labs/breadboard";
+import "@google-labs/llm-starter";
 
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import path from "path";
-import fs from "fs";
-
-
 export default async (req: VercelRequest, res: VercelResponse) => {
   const { q } = req.query;
 
