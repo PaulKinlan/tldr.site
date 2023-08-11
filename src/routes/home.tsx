@@ -10,7 +10,7 @@ export function Home() {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    const response = fetch(`/api/search?q=${query.value}`);
+    const response = await fetch(`/api/search?q=${query.value}`);
     const data = await response.json();
     const { outputs } = data;
     
@@ -33,7 +33,6 @@ export function Home() {
       <div>
         {result}
       </div>
-    );
     </>
   )
 }
