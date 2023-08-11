@@ -10,15 +10,19 @@ export function Home() {
   const onSubmit = async (event) => {
     event.preventDefault();
 
+    try {
     const response = await fetch(`/api/run?q=${query.value}`);
     const data = await response.json();
     const { outputs } = data;
     
-    if (outputs.lengh > 0) { 
+    if (outputs.length > 0) { 
       result.value = outputs[0].text;
     }
     else {
       result.value = "No data found";
+    }
+    } catch (error) {
+      result.value = error;
     }
   };
 
