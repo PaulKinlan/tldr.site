@@ -1,3 +1,5 @@
+import { signal } from "@preact/signals";
+
 export function Home() {
 
   const result = signal("");
