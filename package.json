@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "NODE_OPTIONS='----experimental-global-customevent' vite build",
     "dev": "vite",
     "preview": "vite preview",
     "serve": "npx serve dist"
@@ -39,5 +39,8 @@
     "preact-router": "^4.1.2",
     "vercel": "^31.2.3",
     "vite": "^4.4.9"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

@@ -6,18 +6,9 @@ global.CustomEvent = class extends Event {
 };
 
 import { Board } from "@google-labs/breadboard";
-import { OutputValues, InputValues } from "@google-labs/graph-runner";
-import { Starter } from "@google-labs/llm-starter";
 
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
-const ask = async (inputs: InputValues): Promise<OutputValues> => {
-  const defaultValue = "<Exit>";
-  const message = ((inputs && inputs.message) as string) || "Enter some text";
-  const input = prompt(message, defaultValue);
-  if (input === defaultValue) return { exit: true };
-  return { text: input };
-};
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   const { q } = req.query;
