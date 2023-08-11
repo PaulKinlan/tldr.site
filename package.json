@@ -34,7 +34,7 @@
     "@google-labs/breadboard": "*",
     "@google-labs/graph-runner": "*",
     "@google-labs/llm-starter": "*",
-    "@preact/signals": "^1.2.0",
+    "@preact/signals": "^1.2.1",
     "preact": "^10.16.0",
     "preact-router": "^4.1.2",
     "vercel": "^31.2.3",
