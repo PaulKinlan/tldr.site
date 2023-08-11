@@ -1,11 +1,9 @@
-class CustomEvent extends Event { 
+global.CustomEvent = class extends Event { 
   constructor(message, data) {
     super(message, data)
     this.detail = data.detail
   }
-}
-
-global.CustomEvent = CustomEvent;
+};
 
 import { Board } from "@google-labs/breadboard";
 import { OutputValues, InputValues } from "@google-labs/graph-runner";
