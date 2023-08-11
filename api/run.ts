@@ -17,6 +17,6 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       outputs.push(result.outputs);
     }
   }
-  cc
+
   return res.json({ outputs });
 };
