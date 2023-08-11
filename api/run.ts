@@ -1,12 +1,14 @@
 import { Board } from "@google-labs/breadboard";
 
 import { VercelRequest, VercelResponse } from "@vercel/node";
+import path from "path";
 
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   const { q } = req.query;
 
-  const currentBoard = await Board.load("../graphs/search-summary.json");
+  console.log(__dirname)
+  const currentBoard = await Board.load(path.join(__dirname, "graphs","search-summary.json");
   const outputs = [];
 
   for await (const result of currentBoard.run()) {
