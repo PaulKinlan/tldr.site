@@ -7,7 +7,7 @@ import path from "path";
 export default async (req: VercelRequest, res: VercelResponse) => {
   const { q } = req.query;
 
-  const currentBoard = await Board.load(path.join(process.cwd(), "graphs","search-summary.json");
+  const currentBoard = await Board.load(path.join(process.cwd(), "graphs","search-summary.json"));
   const outputs = [];
 
   for await (const result of currentBoard.run()) {
