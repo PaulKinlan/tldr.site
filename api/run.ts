@@ -1,10 +1,3 @@
-global.CustomEvent = class extends Event { 
-  constructor(message, data) {
-    super(message, data)
-    this.detail = data.detail
-  }
-};
-
 import { Board } from "@google-labs/breadboard";
 
 import { VercelRequest, VercelResponse } from "@vercel/node";

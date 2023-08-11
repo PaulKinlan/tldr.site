@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "NODE_OPTIONS='----experimental-global-customevent' vite build",
+    "build": "NODE_OPTIONS='--experimental-global-customevent' vite build",
     "dev": "vite",
     "preview": "vite preview",
     "serve": "npx serve dist"
