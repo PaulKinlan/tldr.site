@@ -3,6 +3,7 @@ import { signal } from "@preact/signals";
 export function Home() {
 
   const result = signal("");
+  const noResultClass = signal("hidden");
   const query = signal("");
 
   const onInput = event => (query.value = event.target.value);
@@ -17,6 +18,7 @@ export function Home() {
 
       if (outputs.length > 0) {
         result.value = outputs[0].text;
+        noResultClass.value = ""
       }
       else {
         result.value = "No data found";
@@ -37,10 +39,12 @@ export function Home() {
         </form>
       </section>
       <section class="result">
-        <div className={(result.value.length == 0) ? "hidden" : ""}>{result}</div>
-        <details>
-          <summary>Search Results</summary>
-        </details>
+        <div className={noResultClass}>{result}
+          <details>
+            <summary>Search Results</summary>
+          </details>
+        </div>
+
       </section>
     </>
   )
