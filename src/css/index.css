@@ -27,6 +27,8 @@ body {
 header {
   grid-area: header;
   margin: 1em 0;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 section.query {
@@ -64,8 +66,8 @@ section.result div.visible {
   animation: 
     var(--animation-scale-down) reverse,
     var(--animation-fade-out) reverse;
-animation-timing-function: var(--ease-squish-5);
-animation-duration: 1s;
+  animation-timing-function: var(--ease-squish-5);
+  animation-duration: 1s;
 }
 
 footer {
