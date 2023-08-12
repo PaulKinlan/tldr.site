@@ -24,7 +24,7 @@ body {
   }
 
   section.result div {
-    margin-right: unset;
+    margin-right: unset !important;
   }
 }
 
