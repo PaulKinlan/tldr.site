@@ -31,6 +31,8 @@ body {
 @media (prefers-color-scheme: light) {
   section.query h1 {
     background: var(--gradient-17) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
   }
 
   section.result div {
