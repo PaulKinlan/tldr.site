@@ -30,11 +30,11 @@ body {
 
 @media (prefers-color-scheme: light) {
   section.query h1 {
-    background: var(--gradient-17);
+    background: var(--gradient-17) !important;
   }
 
   section.result div {
-    background-color: var(--blue-1);
+    background-color: var(--blue-1) !important;
   }
 }
 
