@@ -21,6 +21,12 @@ section.query {
   place-self: center;
 }
 
+section.query h1 {
+  background: var(--gradient-3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 section.result {
   grid-area: result;
 }
