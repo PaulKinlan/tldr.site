@@ -42,6 +42,12 @@ section.result div {
   background-color: var(--blue-11);
 }
 
+section.result div.hidden {
+  opacity: 0;
+}
+
 footer {
   grid-area: footer;
+  display: flex;
+  justify-content: space-evenly;
 }

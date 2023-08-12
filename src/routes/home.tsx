@@ -37,7 +37,7 @@ export function Home() {
         </form>
       </section>
       <section class="result">
-        <div>{result}</div>
+        <div class={(result.value.length >0) ? "hidden" : ""}>{result}</div>
       </section>
     </>
   )
