@@ -32,12 +32,12 @@ export function Home() {
         <h1>TL;DR</h1>
         <p>Summarize the search results.</p>
         <form onSubmit={onSubmit}>
-          <input type="search" value={query} onInput={onInput} />
+          <input type="search" value={query} onInput={onInput} placeholder="Enter a topic" />
           <button type="submit">Go</button>
         </form>
       </section>
       <section class="result">
-        {result}
+        <div>{result}</div>
       </section>
     </>
   )

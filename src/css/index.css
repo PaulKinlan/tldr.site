@@ -1,3 +1,36 @@
 @import "open-props/style";
 @import "open-props/normalize";
 @import "open-props/buttons";
+
+body {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "query result"
+    "footer footer";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+header {
+  grid-area: header;
+}
+
+section.query {
+  grid-area: query;
+  place-self: center;
+}
+
+section.result {
+  grid-area: result;
+}
+
+section.result div {
+  box-shadow: var(--shadow-4);
+  border-radius: var(--radius-conditional-3);
+  border: var(--border-size-1) solid var(--gray-1);
+}
+
+footer {
+  grid-area: footer;
+}
