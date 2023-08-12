@@ -37,7 +37,10 @@ export function Home() {
         </form>
       </section>
       <section class="result">
-        <div class={(result.value.length == 0) ? "hidden" : ""}>{result}</div>
+        <div className={(result.value.length == 0) ? "hidden" : ""}>{result}</div>
+        <details>
+          <summary>Search Results</summary>
+        </details>
       </section>
     </>
   )
