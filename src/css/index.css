@@ -28,13 +28,18 @@ section.query h1 {
 }
 
 section.result {
+  display: flex;
   grid-area: result;
+  padding: 1em;
 }
 
 section.result div {
   box-shadow: var(--shadow-4);
   border-radius: var(--radius-conditional-3);
   border: var(--border-size-1) solid var(--gray-1);
+  place-self: center;
+  padding: 1em;
+  background-color: var(--blue-11);
 }
 
 footer {
