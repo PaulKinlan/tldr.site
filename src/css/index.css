@@ -22,6 +22,20 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: min-content min-content 1fr min-content;
   }
+
+  section.result div {
+    margin-right: unset;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  section.query h1 {
+    background: var(--gradient-17);
+  }
+
+  section.result div {
+    background-color: var(--blue-1);
+  }
 }
 
 header {
@@ -58,6 +72,7 @@ section.result div {
   place-self: center;
   padding: 1em;
   background-color: var(--blue-11);
+  margin-right: 5em;
 }
 
 section.result div.hidden {
