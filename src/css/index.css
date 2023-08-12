@@ -47,6 +47,15 @@ section.result div.hidden {
   opacity: 0;
 }
 
+section.result div.visible {
+  opacity: 1;
+  animation: 
+    var(--animation-scale-down) reverse,
+    var(--animation-fade-out) reverse;
+animation-timing-function: var(--ease-squish-5);
+animation-duration: 1s;
+}
+
 footer {
   grid-area: footer;
   display: flex;

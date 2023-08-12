@@ -18,7 +18,7 @@ export function Home() {
 
       if (outputs.length > 0) {
         result.value = outputs[0].text;
-        noResultClass.value = ""
+        noResultClass.value = "visible";
       }
       else {
         result.value = "No data found";
