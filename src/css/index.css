@@ -12,6 +12,18 @@ body {
   grid-template-rows: min-content 1fr min-content;
 }
 
+@media (max-width: 600px) {
+  body {
+    grid-template-areas: 
+      "header"
+      "query"
+      "result"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content 1fr min-content;
+  }
+}
+
 header {
   grid-area: header;
   margin: 1em 0;
