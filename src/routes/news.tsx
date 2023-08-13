@@ -5,7 +5,7 @@ export function NewsResults(props) {
 
   return ( 
     <ul>
-      {items.value.map((item) => (<li><a href={item.link[0]['$t']>{item.title[0]['$t']}</a></li>))}
+      {items.value.map((item) => (<li><a href={item.link[0]['$t']}>{item.title[0]['$t']}</a></li>))}
     </ul>
   ); 
 }
