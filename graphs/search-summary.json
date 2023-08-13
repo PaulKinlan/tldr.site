@@ -33,6 +33,12 @@
       "in": "json"
     },
     {
+      "from": "fetch-4",
+      "to": "output-search",
+      "out": "response",
+      "in": "json"
+    },
+    {
       "from": "urlTemplate-3",
       "to": "fetch-4",
       "out": "url",
@@ -99,6 +105,10 @@
       "configuration": {
         "expression": "$join(items.snippet, '\n')"
       }
+    },
+    {
+      "id": "output-search",
+      "type": "output"
     },
     {
       "id": "output-6",
