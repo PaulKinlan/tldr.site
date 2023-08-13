@@ -88,7 +88,10 @@
     },
     {
       "id": "fetch-4",
-      "type": "fetch"
+      "type": "fetch",
+      "configuration": {
+        "raw": true
+      }
     },
     {
       "id": "xmlToJson-4",
