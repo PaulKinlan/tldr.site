@@ -13,7 +13,7 @@ export function SearchResults(props) {
 export function Home() {
 
   const summary = useSignal("");
-  const searchResults = useSignal({});
+  const searchResults = useSignal([]);
   const noResultClass = useSignal("hidden");
   const query = useSignal("");
 
