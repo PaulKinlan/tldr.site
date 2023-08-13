@@ -1,12 +1,23 @@
 import { signal } from "@preact/signals";
 
+export function SearchResults({ props }) {
+  const { results } = props;
+
+  return ( 
+    <ul>
+      {results.items.map((item) => (<li><a href={item.link}>{item.title}</a> &mdash; <span>{item.snippet}</span></li>))}
+    </ul>
+  ); 
+}
+
 export function Home() {
 
-  const result = signal("");
+  const summary = signal("");
+  const searchResults = signal("");
   const noResultClass = signal("hidden");
   const query = signal("");
 
-  const onInput = event => (query.value = event.target.value);
+  const onInput = (event) => (query.value = event.target.value);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -14,17 +25,17 @@ export function Home() {
     try {
       const response = await fetch(`/api/run?q=${query.value}`);
       const data = await response.json();
-      const { outputs } = data;
+      const { outputs } = data; // outputs[0] is the search results, outputs[1] is the result
 
       if (outputs.length > 0) {
-        result.value = outputs[0].text;
+        summary.value = outputs[1].text;
         noResultClass.value = "visible";
       }
       else {
-        result.value = "No data found";
+        summary.value = "No data found";
       }
     } catch (error) {
-      result.value = error;
+      summary.value = error;
     }
   };
 
@@ -39,9 +50,10 @@ export function Home() {
         </form>
       </section>
       <section class="result">
-        <div className={noResultClass}>{result}
+        <div className={noResultClass}>{summary}
           <details>
             <summary>Search Results</summary>
+            <SearchResults>{searchResults}</SearchResults>
           </details>
         </div>
 
