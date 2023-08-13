@@ -5,7 +5,7 @@ export function NewsResults(props) {
 
   return ( 
     <ul>
-      {items.value.map((item) => (<li><a href={item.link}>{item.title}</a> &mdash; <span>{item.snippet}</span></li>))}
+      {items.value.map((item) => (<li><a href={item.link[0]['$t']>{item.title[0]['$t']}</a> &mdash; <span>{item.snippet}</span></li>))}
     </ul>
   ); 
 }
@@ -29,7 +29,7 @@ export function News() {
 
       if (outputs.length > 0) {
         batch(() => {
-          searchResults.value = outputs[0].json.items;
+          searchResults.value = outputs[0].json[1].rss.channel[0].item;
           summary.value = outputs[1].text;
         });
         noResultClass.value = "visible";
