@@ -79,7 +79,7 @@ section.result div {
   background-color: var(--blue-11);
   margin-right: 5em;
   overflow-y: scroll;
-  max-height: 80dvh;
+  max-height: 70dvh;
 }
 
 section.result div.hidden {
