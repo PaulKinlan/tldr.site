@@ -3,9 +3,11 @@ import { signal } from "@preact/signals";
 export function SearchResults({ props }) {
   const { results } = props;
 
+  console.log(props)
+
   return ( 
     <ul>
-      {results.items.map((item) => (<li><a href={item.link}>{item.title}</a> &mdash; <span>{item.snippet}</span></li>))}
+      {"item" in results && results.items.map((item) => (<li><a href={item.link}>{item.title}</a> &mdash; <span>{item.snippet}</span></li>))}
     </ul>
   ); 
 }
@@ -13,7 +15,7 @@ export function SearchResults({ props }) {
 export function Home() {
 
   const summary = signal("");
-  const searchResults = signal("");
+  const searchResults = signal({});
   const noResultClass = signal("hidden");
   const query = signal("");
 
