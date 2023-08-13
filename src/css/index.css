@@ -26,8 +26,8 @@ body {
 
   section.result div {
     margin-right: unset !important;
-    overflow-y: unset;
-    max-height: unset;
+    overflow-y: unset !important;
+    max-height: unset !important;
   }
 }
 
