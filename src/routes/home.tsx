@@ -29,7 +29,7 @@ export function Home() {
 
       if (outputs.length > 0) {
         batch(() => {
-          searchResults.value = outputs[0].items;
+          searchResults.value = outputs[0].json.items;
           summary.value = outputs[1].text;
         });
         noResultClass.value = "visible";
