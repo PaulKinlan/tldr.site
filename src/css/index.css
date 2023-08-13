@@ -10,6 +10,7 @@ body {
     "footer footer";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content 1fr min-content;
+  max-height: 100dvh;
 }
 
 @media (max-width: 600px) {
@@ -25,6 +26,8 @@ body {
 
   section.result div {
     margin-right: unset !important;
+    overflow-y: unset;
+    max-height: unset;
   }
 }
 
@@ -75,6 +78,8 @@ section.result div {
   padding: 1em;
   background-color: var(--blue-11);
   margin-right: 5em;
+  overflow-y: scroll;
+  max-height: 80dvh;
 }
 
 section.result div.hidden {
