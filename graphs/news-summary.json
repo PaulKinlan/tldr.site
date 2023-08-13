@@ -1,20 +1,6 @@
 {
   "edges": [
     {
-      "from": "secrets-1",
-      "to": "urlTemplate-3",
-      "constant": true,
-      "out": "PALM_KEY",
-      "in": "PALM_KEY"
-    },
-    {
-      "from": "secrets-1",
-      "to": "urlTemplate-3",
-      "constant": true,
-      "out": "GOOGLE_CSE_ID",
-      "in": "GOOGLE_CSE_ID"
-    },
-    {
       "from": "generateText-1",
       "to": "output-6",
       "out": "completion",
@@ -27,15 +13,21 @@
       "in": "headlines"
     },
     {
-      "from": "fetch-4",
+      "from": "xmlToJson-4",
       "to": "jsonata-5",
-      "out": "response",
+      "out": "json",
       "in": "json"
     },
     {
       "from": "fetch-4",
-      "to": "output-search",
+      "to": "xmlToJson-4",
       "out": "response",
+      "in": "xml"
+    },
+    {
+      "from": "xmlToJson-4",
+      "to": "output-search",
+      "out": "json",
       "in": "json"
     },
     {
@@ -97,6 +89,10 @@
     {
       "id": "fetch-4",
       "type": "fetch"
+    },
+    {
+      "id": "xmlToJson-4",
+      "type": "xmlToJson"
     },
     {
       "id": "jsonata-5",
