@@ -5,7 +5,7 @@ export function SearchResults(props) {
 
   return ( 
     <ul>
-      {items.map((item) => (<li><a href={item.link}>{item.title}</a> &mdash; <span>{item.snippet}</span></li>))}
+      {items.value.map((item) => (<li><a href={item.link}>{item.title}</a> &mdash; <span>{item.snippet}</span></li>))}
     </ul>
   ); 
 }
