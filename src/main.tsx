@@ -1,7 +1,7 @@
 import { render } from 'preact'
 import Router from 'preact-router';
 import { Home } from './routes/home.js';
-
+import { News } from './routes/news.js';
 import { About } from './routes/about.js';
 import { Header } from './components/header.js';
 import { Footer } from './components/footer.js';
@@ -18,6 +18,7 @@ const Container = ({ children }) => {
 const Main = () => (
   <Router>
     <Container path="/"><Home /></Container>
+    <Container path="/news"><News /></Container>
     <Container path="/about"><About /></Container>
   </Router>
 );

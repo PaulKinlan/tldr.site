@@ -76,8 +76,7 @@
       "type": "secrets",
       "configuration": {
         "keys": [
-          "PALM_KEY",
-          "GOOGLE_CSE_ID"
+          "PALM_KEY"
         ]
       }
     },
@@ -92,7 +91,7 @@
       "id": "urlTemplate-3",
       "type": "urlTemplate",
       "configuration": {
-        "template": "https://www.googleapis.com/customsearch/v1?key={{PALM_KEY}}&cx={{GOOGLE_CSE_ID}}&q={{query}}"
+        "template": "https://news.google.com/rss/search?q={{query}}&hl=en-US&gl=US&ceid=US:en"
       }
     },
     {
@@ -103,7 +102,7 @@
       "id": "jsonata-5",
       "type": "jsonata",
       "configuration": {
-        "expression": "$join(items.snippet, '\n')"
+        "expression": "$join((rss.channel.item.title.`$t`)[[1..20]], `\n`)"
       }
     },
     {
@@ -118,7 +117,7 @@
       "id": "promptTemplate-1",
       "type": "promptTemplate",
       "configuration": {
-        "template": "Use the search results below to write a few sentences to summarize the latest information on this topic:\n\n##Topic:\n{{query}}\n\n## Search Results {{headlines}}\n\\n## Summary:\n"
+        "template": "Use the news headlines below to write a few sentences to summarize the latest news on this topic:\n\n##Topic:\n{{query}}\n\n## Headlines {{headlines}}\n\\n## Summary:\n"
       }
     },
     {
