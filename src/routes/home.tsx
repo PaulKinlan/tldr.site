@@ -1,6 +1,6 @@
-import { signal } from "@preact/signals";
+import { signal, useSignal } from "@preact/signals";
 
-export function SearchResults({ props }) {
+export function SearchResults(props) {
   const { results } = props;
 
   console.log(props)
@@ -14,10 +14,10 @@ export function SearchResults({ props }) {
 
 export function Home() {
 
-  const summary = signal("");
-  const searchResults = signal({});
-  const noResultClass = signal("hidden");
-  const query = signal("");
+  const summary = useSignal("");
+  const searchResults = useSignal({});
+  const noResultClass = useSignal("hidden");
+  const query = useSignal("");
 
   const onInput = (event) => (query.value = event.target.value);
 
