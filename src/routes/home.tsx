@@ -1,13 +1,11 @@
 import { batch, useSignal } from "@preact/signals";
 
 export function SearchResults(props) {
-  const { results } = props;
-
-  console.log(props)
+  const { items } = props;
 
   return ( 
     <ul>
-      {"item" in results && results.items.map((item) => (<li><a href={item.link}>{item.title}</a> &mdash; <span>{item.snippet}</span></li>))}
+      {items.map((item) => (<li><a href={item.link}>{item.title}</a> &mdash; <span>{item.snippet}</span></li>))}
     </ul>
   ); 
 }
@@ -31,7 +29,7 @@ export function Home() {
 
       if (outputs.length > 0) {
         batch(() => {
-          searchResults.value = outputs[0];
+          searchResults.value = outputs[0].items;
           summary.value = outputs[1].text;
         });
         noResultClass.value = "visible";
@@ -58,7 +56,7 @@ export function Home() {
         <div className={noResultClass}>{summary}
           <details>
             <summary>Search Results</summary>
-            <SearchResults>{searchResults}</SearchResults>
+            <SearchResults items={searchResults}></SearchResults>
           </details>
         </div>
 
