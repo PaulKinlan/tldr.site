@@ -28,6 +28,7 @@ export function Home() {
       const { outputs } = data; // outputs[0] is the search results, outputs[1] is the result
 
       if (outputs.length > 0) {
+        searchResults.value = outputs[0];
         summary.value = outputs[1].text;
         noResultClass.value = "visible";
       }
