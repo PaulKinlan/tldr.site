@@ -56,6 +56,7 @@ header nav {
 section.query {
   grid-area: query;
   place-self: center;
+  width: 80%;
 }
 
 section.query h1 {
