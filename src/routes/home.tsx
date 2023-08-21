@@ -1,4 +1,5 @@
 import { batch, useSignal } from "@preact/signals";
+import { useRef } from "preact/hooks";
 
 export function SearchResults(props) {
   const { items } = props;
@@ -12,18 +13,18 @@ export function SearchResults(props) {
 
 export function Home() {
 
+  const input = useRef(null);
   const summary = useSignal("");
   const searchResults = useSignal([]);
   const noResultClass = useSignal("hidden");
-  const query = useSignal("");
-
-  const onInput = (event) => (query.value = event.target.value);
 
   const onSubmit = async (event) => {
     event.preventDefault();
 
+    const queryValue = input.current.value;
+
     try {
-      const response = await fetch(`/api/run?q=${query.value}`);
+      const response = await fetch(`/api/run?q=${queryValue}`);
       const data = await response.json();
       const { outputs } = data; // outputs[0] is the search results, outputs[1] is the result
 
@@ -38,7 +39,7 @@ export function Home() {
         summary.value = "No data found";
       }
     } catch (error) {
-      summary.value = error;
+      summary.value =  error as string;
     }
   };
 
@@ -48,7 +49,7 @@ export function Home() {
         <h1>TL;DR</h1>
         <p>Summarize the search results.</p>
         <form onSubmit={onSubmit}>
-          <input type="search" value={query} onInput={onInput} placeholder="Enter a topic" />
+          <input type="search" ref={input} placeholder="Enter a topic" />
           <button type="submit">Go</button>
         </form>
       </section>

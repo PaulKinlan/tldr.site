@@ -39,7 +39,7 @@ export function News() {
         summary.value = "No data found";
       }
     } catch (error) {
-      summary.value = error;
+      summary.value = error as string;
     }
   };
 
