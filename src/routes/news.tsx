@@ -1,13 +1,14 @@
 import { batch, useSignal } from "@preact/signals";
+import { useRef } from "preact/hooks";
 
 export function NewsResults(props) {
   const { items } = props;
 
-  return ( 
+  return (
     <ul>
       {items.value.map((item) => (<li><a href={item.link[0]['$t']}>{item.title[0]['$t']}</a></li>))}
     </ul>
-  ); 
+  );
 }
 
 export function News() {
