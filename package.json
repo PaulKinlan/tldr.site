@@ -39,7 +39,7 @@
     "preact": "^10.16.0",
     "preact-router": "^4.1.2",
     "vercel": "^31.2.3",
-    "vite": "^4.4.9"
+    "vite": "^4.4.12"
   },
   "engines": {
     "node": ">=18.0.0"
